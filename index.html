@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/xxmzBrw.css">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="main.js"></script>
+        <title>Scrolling Website to Imagination</title>
+    </head>
+<body>
+    <!-- Loader Screen -->
+<div id="loader">
+    <div class="loader-circle"></div>
+    <p>Loading...</p>
+</div>
+
+        <!-- nav Section -->
+        <nav class="navbar">
+            <div class="logo">
+                
+                <img src="your-logo.png" alt="Club Logo">
+            </div>        
+        
+            <ul class="nav-links">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch">
+                    <label for="theme-switch" class="toggle-label"></label>
+                </div>                
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#club-info" class="nav-link">Club Info</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#" id="contact-nav-btn">Contact</a></li>
+            </ul>
+        
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+        
+    
+    <!-- Hero Section -->
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <section id="home">
+        <h1>Empowering Innovators, Building Startups!</h1>
+        <p>Join our community of aspiring entrepreneurs, innovators, and change-makers. Turn ideas into reality with mentorship, funding, and networking!</p>
+        <div class="hero-buttons">
+            <a href="signup.html" class="cta-btn">Join the Club</a>
+            <a href="signup.html" class="cta-btn-outline">Explore Startups</a>
+
+        </div>
+        </section>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <div class="container1">
+        <div class="about">
+            <h2>🚀 About the Club</h2>
+            <p>The <strong>"SR Univerity Startup & Innovation Club"</strong> is a student-driven initiative that empowers young entrepreneurs, fosters innovation, and connects students with mentors, investors, and resources to build successful startups.</p>
+
+            <ul class="highlights">
+                <li><span>🚀</span> 100+ Student Startups Incubated</li>
+                <li><span>🎤</span> Monthly Pitch Sessions & Hackathons</li>
+                <li><span>🤝</span> Industry Mentors & Investors Network</li>
+                <li><span>💰</span> Access to Funding & Grants</li>
+            </ul>
+        </div>
+
+        <div class="image-container">
+            <img src="DSC06430.JPG" alt="Startup Team">
+            <img src="DSC06053.JPG" alt="Business Meeting">
+            <img src="DSC06731.JPG" alt="Innovation">
+            <img src="1DSC06403.JPG" alt="Entrepreneur Success">
+        </div>
+    </div>
+    <div class="opportunities-container">
+        <h2>🚀 Exciting Opportunities</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="startup.png" alt="Startup Icon">
+                <h3>Startup Incubation Program</h3>
+                <p>Get mentorship and resources to build your startup.</p>
+            </div>
+
+            <div class="card">
+                <img src="hackathon-icon.png" alt="Hackathon Icon">
+                <h3>Hackathons & Competitions</h3>
+                <p>Showcase your skills, win prizes, and attract investors.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/100/000000/conference.png" alt="Workshops Icon">
+                <h3>Workshops & Speaker Sessions</h3>
+                <p>Learn from industry leaders and successful entrepreneurs.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/100/000000/money.png" alt="Funding Icon">
+                <h3>Funding & Grants</h3>
+                <p>Access financial support for your startup journey.</p>
+            </div>
+        </div>
+        <a href="#" class="cta-btn">Explore Our Programs</a>
+    </div>
+    <!-- slude show -->
+    <section id="events">
+    <h1>Last Year's Events</h1>
+</section>
+
+<head>
+    <link rel="preload" as="image" href="/DSC06053.JPG"> <!-- Preload main image -->
+</head>
+<body>
+    <div class="main-slide">
+        <img id="mainImage" src="/DSC06053.JPG" alt="Event 1">
+        <button class="prev" onclick="slideshow.changeSlide(-1)">❮</button>
+        <button class="next" onclick="slideshow.changeSlide(1)">❯</button>
+    </div>
+    <div class="thumbnail-container">
+        <img class="thumbnail" src="DSC06053.JPG" data-full="/DSC06053.JPG" loading="lazy" onclick="slideshow.showSlide(0)">
+        <img class="thumbnail" src="DSC06078.JPG" data-full="/DSC06078.JPG" loading="lazy" onclick="slideshow.showSlide(1)">
+        <img class="thumbnail" src="DSC06079.JPG" data-full="/DSC06079.JPG" loading="lazy" onclick="slideshow.showSlide(2)">
+        <img class="thumbnail" src="DSC06096.JPG" data-full="/DSC06096.JPG" loading="lazy" onclick="slideshow.showSlide(3)">
+        <img class="thumbnail" src="DSC06100.JPG" data-full="/DSC06100.JPG" loading="lazy" onclick="slideshow.showSlide(4)">
+        <img class="thumbnail" src="DSC06403.JPG" data-full="/DSC06403.JPG" loading="lazy" onclick="slideshow.showSlide(5)">
+        <img class="thumbnail" src="DSC06404.JPG" data-full="/DSC06404.JPG" loading="lazy" onclick="slideshow.showSlide(6)">
+        <img class="thumbnail" src="DSC06425.JPG" data-full="/DSC06425.JPG" loading="lazy" onclick="slideshow.showSlide(7)">
+        <img class="thumbnail" src="DSC06430.JPG" data-full="/DSC06430.JPG" loading="lazy" onclick="slideshow.showSlide(8)">
+    </div>
+
+    <script>
+        function loadFullImage(img) {
+            document.getElementById('mainImage').src = img.getAttribute('data-full');
+            slideshow.showSlide(parseInt(img.getAttribute('data-index')));
+        }
+    </script>
+</body>
+
+        <!-- Upcoming Events Section -->
+                   <div class="events-leaderboard-container">
+                    <!-- Upcoming Events Section -->
+                    <div class="events">
+                        <h2>Upcoming Events (Live Updates)</h2>
+                        <div class="event-list" id="eventList">
+                            <div class="event">
+                                <h3>Hackathon – March 25, 2025</h3>
+                                <a href="#" class="event-btn">Register Now</a>
+                            </div>
+                            <div class="event">
+                                <h3>Investor Pitch Day – April 10, 2025</h3>
+             
+                                <a href="#" class="event-btn">Apply to Pitch</a>
+                            </div>
+                        </div>
+                        <a href="#" class="ctal-btn">View All Events</a>
+                    </div>
+                
+                    <!-- Leaderboard Section -->
+                    <div class="leaderboard-container">
+                        <h2>🏆 Hackathon & Pitch Event Leaderboard</h2>
+                        <table class="leaderboard">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Project</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body">
+                                <tr>
+                                    <td class="rank">🥇</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>AI-Powered Assistant</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">🥈</td>
+                                    <td>Neha Verma</td>
+                                    <td>Smart Farming System</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">🥉</td>
+                                    <td>Amit Rao</td>
+                                    <td>Blockchain Voting</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">🎖️</td>
+                                    <td>Pooja Nair</td>
+                                    <td>Mental Health App</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank">🎖️</td>
+                                    <td>Vikas Mehta</td>
+                                    <td>Green Energy Solutions</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <script src="leaderboard.js"></script>
+                
+<!-- Side Contact Panel (Initially Hidden) -->
+<div id="contact-panel" class="contact-panel">
+    <button id="close-panel">&times;</button>
+    <h2>Become a part of the innovation revolution!</h2>
+    
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <!-- Contact Form -->
+    <form>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+<div class="unique-layout">
+    <!-- Startups & Success Stories Section -->
+    <section class="floating-card">
+        <h2>🚀 Startups & Success Stories</h2>
+        <p>Showcasing student startups and alumni successes.</p>
+
+        <div class="floating-wrapper">
+            <div class="floating-item">
+                <img src="startup1.jpg" alt="Startup 1">
+                <div class="content">
+                    <h3>InnovateX</h3>
+                    <p>From idea to industry leader. Read their journey.</p>
+                </div>
+            </div>
+
+            <div class="floating-item">
+                <img src="startup2.jpg" alt="Startup 2">
+                <div class="content">
+                    <h3>TechSpark</h3>
+                    <p>Transforming education through AI-driven tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<section id="club-info" class="club-info">
+    <div class="container">
+        <h2>Meet Our Club Team</h2>
+        <p>Our club is led by a passionate and dedicated team committed to fostering innovation, collaboration, and growth.</p>
+        
+        <div class="team-grid">
+            <div class="member">
+                <img src="image copy.png" alt="President">
+                <h3>Tejaskumar</h3>
+                <p>President</p>
+            </div>
+            
+            <div class="member">
+                <img src="image copy.png" alt="Vice President">
+                <h3>Tejaskumar</h3>
+                <p>Vice President</p>
+            </div>
+
+            <div class="member">
+                <img src="image copy.png" alt="Member">
+                <h3>Tejaskumar</h3>
+                <p>Secretary</p>
+            </div>
+
+            <div class="member">
+                <img src="image copy.png" alt="Member">
+                <h3>Tejaskumar</h3>
+                <p>Event Coordinator</p>
+            </div>
+
+            <div class="member">
+                <img src="image copy.png" alt="Member">
+                <h3>Tejaskumar</h3>
+                <p>Technical Lead</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>© 2025 Startup Club Innovation | Designed by <span class="designer-name">Boddu Tejas Kumar</span></p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
