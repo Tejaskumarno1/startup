@@ -558,3 +558,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    // Toggle Menu on Click
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Close Menu When Clicking Outside
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && event.target !== menuToggle) {
+            navLinks.classList.remove("active");
+        }
+    });
+
+    // Ensure Menu is Visible on Desktop and Hidden on Mobile by Default
+    function checkScreenSize() {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove("active"); // Always show menu on desktop
+        }
+    }
+
+    // Run Check on Load & Resize
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+});
