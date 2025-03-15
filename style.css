@@ -101,28 +101,31 @@ body {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
-/* Navbar Styling */
+
+/* Logo */
+.logo img {
+  width: 120px; /* Adjust based on your logo size */
+}
+/* ===== NAVBAR CONTAINER ===== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 10px rgba(134, 129, 129, 0.584);
-  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.8);  /* Dark background */
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
 }
 
-/* Logo */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* ===== LOGO ===== */
+.logo img {
+  width: 100px;  /* Adjust logo size as needed */
 }
 
-/* Navigation Links */
+/* ===== NAVIGATION LINKS (Desktop Default) ===== */
 .nav-links {
   display: flex;
   list-style: none;
@@ -133,62 +136,76 @@ body {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #ffcc00;
 }
 
-/* Mobile Menu */
+/* ===== HAMBURGER MENU BUTTON (Hidden on Desktop) ===== */
 .menu-toggle {
   display: none;
   font-size: 2rem;
-  cursor: pointer;
-  color: white;
   background: none;
   border: none;
+  color: white;
+  cursor: pointer;
 }
 
-/* Responsive Navigation */
+/* ===== MOBILE STYLES ===== */
 @media (max-width: 768px) {
-  /* Hide default nav links */
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 220px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  /* Show menu when active */
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  /* Show menu toggle button */
+  /* Show the hamburger button */
   .menu-toggle {
     display: block;
+    z-index: 1100; /* Ensure it's above the menu */
+  }
+  
+  /* Hide default nav links off-screen and style for mobile */
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;         /* Initially hidden off-screen */
+    height: 100vh;        /* Full viewport height */
+    width: 80vw;          /* Use 80% of viewport width */
+    max-width: 300px;     /* Limit maximum width */
+    background: rgba(0, 0, 0, 0.95);
+    padding: 60px 20px;   /* Extra top padding for aesthetics */
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+  }
+  
+  /* When active, slide menu into view */
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    width: 100%;
+  }
+  
+  .nav-links li a {
+    font-size: 1.2rem;
+    width: 100%;
   }
 }
 
-/* Always Show Menu on Desktop */
+/* ===== DESKTOP OVERRIDE ===== */
 @media (min-width: 769px) {
   .nav-links {
     display: flex !important;
+    position: static;
+    height: auto;
+    width: auto;
   }
-
   .menu-toggle {
     display: none;
   }
 }
+
+
 
 /* Hero Section */
 .hero {
@@ -914,91 +931,6 @@ h1 {
       width: 100%;
   }
 }
-.club-info {
-  border-radius: 10px;
-  text-align: center;
-  padding: 60px 20px;
-  background: #f9f9f9;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-
-}
-
-.club-info h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.club-info p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.member {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.member img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 3px solid #ff6b00;
-}
-
-.member h3 {
-  font-size: 1.3rem;
-  color: #333;
-}
-
-.member p {
-  font-size: 1rem;
-  color: #777;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: white;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .menu-toggle {
-      display: block;
-  }
-}
 /* Footer Styling */
 .footer {
   background: #111; /* Dark background */
@@ -1216,37 +1148,137 @@ body {
 .light-mode .floating-card p {
   color: black;
 }
+
 @media (max-width: 768px) {
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: rgba(0, 0, 0, 0.9);
-      width: 200px;
-      padding: 10px;
-      border-radius: 5px;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .menu-toggle {
-      display: block;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: white;
+  .thumbnail-container {
+    display: none;
   }
 }
-
-/* Always Show Menu on Desktop */
-@media (min-width: 769px) {
-  .nav-links {
-      display: flex !important;
+@media (max-width: 600px) {
+  .floating-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
-  .menu-toggle {
-      display: none;
+}
+/* === Base Styling for Club Info Section === */
+.club-info {
+  width: 100%;
+  max-width: 1200px;           /* Limits the max width; scales on smaller screens */
+  margin: 0 auto;              /* Centers horizontally */
+  border-radius: 10px;
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.club-info h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.club-info p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* === Team Grid Layout === */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;  /* Prevents the grid from exceeding 1000px */
+  margin: 0 auto;     /* Centers the grid container */
+}
+
+/* === Individual Team Member Card === */
+.member {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #ff6b00;
+}
+
+.member h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.member p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* === Responsive Adjustments for Smaller Screens === */
+@media (max-width: 600px) {
+  .club-info {
+    padding: 40px 10px;
+  }
+  
+  .club-info h2 {
+    font-size: 2rem;
+  }
+  
+  .club-info p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .team-grid {
+    gap: 15px;
+  }
+  
+  .member img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .member h3 {
+    font-size: 1.1rem;
+  }
+  
+  .member p {
+    font-size: 0.9rem;
+  }
+}
+body.light-mode .navbar {
+  background: rgb(255, 255, 255);
+}
+
+body.light-mode .nav-links li a {
+  color: black;
+}
+
+body.light-mode .menu-toggle {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  body.light-mode .nav-links {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 10); /* Drop shadow for mobile menu */
+  }
+  body.light-mode .nav-links li a {
+    color: black;
   }
 }
