@@ -212,9 +212,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const thumbnails = document.querySelectorAll(".thumbnail");
 
     const imagePaths = [
-        "/DSC06053.JPG", "/DSC06078.JPG", "/DSC06079.JPG", 
-        "/DSC06096.JPG", "/DSC06100.JPG", "/DSC06403.JPG", 
-        "/DSC06404.JPG", "/DSC06425.JPG", "/DSC06430.JPG"
+        "DSC06053.JPG", "DSC06078.JPG", "DSC06079.JPG", 
+        "DSC06096.JPG", "DSC06100.JPG", "DSC06403.JPG", 
+        "DSC06404.JPG", "DSC06425.JPG", "DSC06430.JPG"
     ];
 
     let currentIndex = 0;
@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /*** 🎞️ Slideshow with Zoom & Smooth Transitions ***/
     const imagePaths = [
-        "/DSC06053.JPG", "/DSC06078.JPG", "/DSC06079.JPG", "/DSC06096.JPG", "/DSC06100.JPG"
+        "DSC06053.JPG", "DSC06078.JPG", "DSC06079.JPG", "DSC06096.JPG", "DSC06100.JPG"
     ];
 
     setTimeout(() => {
@@ -557,16 +557,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlides() {
-    slides.forEach((slide, index) => {
-        slide.style.display = (index === slideIndex) ? "block" : "none";
-    });
-    slideIndex = (slideIndex + 1) % slides.length; // Loop back to first slide
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
-
-document.addEventListener("DOMContentLoaded", showSlides);
 
